@@ -154,3 +154,8 @@
     font-style: italic;
     text-decoration: none;
 }
+
+/*PERSONAS*/
+#bio{
+    text-align: justify;
+}

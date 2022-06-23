@@ -27,6 +27,7 @@ async function getSearchMovie(searchValue){
          main.firstChild.remove();
        }
         createSection("Search: "+searchValue,searchMovies,"search");
+        searchInput.value="";
     }catch(error){
         console.log(error);
     }
@@ -46,8 +47,24 @@ async function getDataTopRated(){
     }
 }
 
+function menAdvertencia(mensaje){
+    const divMenAdvertencia=document.createElement('div');
+    divMenAdvertencia.classList.add('bg-danger','text-white','border-danger','p-2','text-center','col-xl-10','mx-auto','mt-xl-5','fs-5');
+    divMenAdvertencia.textContent=mensaje;
+    main.appendChild(divMenAdvertencia);
+    setTimeout(() => {
+      divMenAdvertencia.style.display="none";
+      getDataTopRated();
+      getGenres();
+      searchInput.value="";
+    }, 3000);
+  }
 
 function createSection(titleSection,movies,typeC){
+    if(movies.length<=0){
+        menAdvertencia(titleSection+", We didn’t find anything related");
+        return;
+    }
     //contenedor
     let section=document.createElement("div");
     section.classList.add('seccion','contenedor');
@@ -104,7 +121,6 @@ function createSection(titleSection,movies,typeC){
     buttonLeft.addEventListener('click',()=>{
         containerCarousel.scrollLeft-=containerCarousel.offsetWidth;
     })
-
 
     
     //PELICULAS

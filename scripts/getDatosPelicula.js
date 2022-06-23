@@ -46,6 +46,7 @@ async function getDetailsMovie(idMovie){
         let response=await axios.get("https://api.themoviedb.org/3/movie/"+idMovie+"?api_key="+apiKey);
         //ENVIO LA DATA COMO PARAMETRO PARA QUE ESTA MODIFIQUE EL HTML
         updateTemplate(response.data);
+        console.log(response.data);
 
     }catch(error){
         console.log(error);
@@ -88,6 +89,7 @@ async function getSimilarMovie(idMovie){
 function updateTemplate(dataMovie){
     let date=new Date(dataMovie.release_date);
     title.textContent=dataMovie.title;
+    document.title =dataMovie.title;
     pView.textContent=dataMovie.overview;
     imgHead.src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+dataMovie.backdrop_path;
     yearMovie.textContent=date.getFullYear();
