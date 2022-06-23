@@ -1,6 +1,9 @@
 const main=document.getElementById("main");
 const apiKey="3170044459c69c0c3f94ecc3f366b578";
 
+const searchInput=document.getElementById("searchInput");
+const searchForm=document.getElementById("form-search");
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,20 +13,41 @@ document.addEventListener("DOMContentLoaded", () => {
     getGenres();
 });
 
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let searchValue=searchInput.value;
+    getSearchMovie(searchValue);
+});
+
+async function getSearchMovie(searchValue){
+   try{
+       let response=await axios.get("https://api.themoviedb.org/3/search/movie?api_key="+apiKey+"&query="+searchValue);
+       let searchMovies=response.data.results;
+       while(main.firstChild){
+         main.firstChild.remove();
+       }
+        createSection("Search: "+searchValue,searchMovies,"search");
+    }catch(error){
+        console.log(error);
+    }
+
+    
+}
+
 
 async function getDataTopRated(){
     try{
         let response=await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key="+apiKey);
         let moviesRatedTop=response.data.results;
         console.log(moviesRatedTop);
-        createSection("Top Rated",moviesRatedTop);
+        createSection("Top Rated",moviesRatedTop,"other");
     }catch(error){
         console.log(error);
     }
 }
 
 
-function createSection(titleSection,movies){
+function createSection(titleSection,movies,typeC){
     //contenedor
     let section=document.createElement("div");
     section.classList.add('seccion','contenedor');
@@ -61,7 +85,14 @@ function createSection(titleSection,movies){
     let containerCarousel=document.createElement("div");
     containerCarousel.classList.add('container-carousel');
     let carouselCont=document.createElement("div");
-    carouselCont.classList.add('carousel');
+    //cambia el display al ser una busqueda
+    if(typeC=="search"){ 
+        carouselCont.classList.add('search');
+        buttonRight.style.display="none";
+        buttonLeft.style.display="none";
+    }else{
+     carouselCont.classList.add('carousel');
+    }
     carouselCont.setAttribute("id","carousel");
 
     //SCROLL CAROUSEL DERECHA
@@ -119,3 +150,5 @@ function hoverMovie(movie){
         movie.classList.remove('hover');
     })
 }
+
+

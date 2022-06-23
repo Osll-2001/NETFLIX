@@ -75,6 +75,13 @@
     flex-wrap: nowrap;
 }
 
+/*si es una busquedas*/
+.seccion .container-carousel .search{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
 .seccion .container-carousel .carousel .movie{
     min-width: 20%;
     transition:.3s ease all;

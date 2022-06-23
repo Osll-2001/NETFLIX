@@ -20,7 +20,7 @@ async function getMoviesGenre(idGenre,name){
     try{
         let response=await axios.get("https://api.themoviedb.org/3/discover/movie?api_key="+apiKey+"&with_genres="+idGenre);
         let moviesGenre=response.data.results;
-        createSection(name,moviesGenre);
+        createSection(name,moviesGenre,"other");
     }catch(error){
         console.log(error);
     }

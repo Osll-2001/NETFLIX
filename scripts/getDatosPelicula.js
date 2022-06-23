@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
    getSimilarMovie(id);
 });
 
+
 btnCerrar.addEventListener('click',()=>{
     video.src="";
 })
@@ -76,7 +77,7 @@ async function getSimilarMovie(idMovie){
         while(main.firstChild){
             main.firstChild.remove();
         }
-        createSection("Similar Movies",response.data.results);
+        createSection("Similar Movies",response.data.results,"other");
     }catch(error){
         console.log(error);
     }
