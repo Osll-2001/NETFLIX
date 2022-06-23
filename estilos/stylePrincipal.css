@@ -1,0 +1,126 @@
+/*NAV*/
+#icono{
+    width: 100px;
+}
+
+
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+/*title and controls*/
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.title{
+    color:#ffff;
+    font-size: 30px;
+}
+
+/*contenedor carousel*/
+
+.seccion{
+    margin-bottom: 70px;
+}
+
+.seccion .con-main{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.seccion .con-main #arrowLeft,
+.seccion .con-main #arrowRight{
+    position: absolute;
+    border: none;
+    background-color:rgba(0,0,0,0.3);
+    font-size: 40px;
+    height: 50%;
+    top:calc(50%-25%);
+    line-height: 40px;
+    width: 50px;
+    color: #ffff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.seccion .con-main #arrowLeft{
+    left: 0;
+}
+.seccion .con-main #arrowRight{
+    right: 0;
+}
+
+.seccion .con-main #arrowLeft:hover,
+.seccion .con-main #arrowRight:hover{
+    background-color:rgba(0,0,0,0.9);
+}
+
+/*Carousel*/
+.seccion .container-carousel{
+    width: 100%;
+    padding: 20px 0px;
+    /*Ocultar lo que este afuera del container*/
+    overflow: hidden;
+    /*comportamiento del scroll*/
+    scroll-behavior: smooth;
+}
+
+.seccion .container-carousel .carousel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.seccion .container-carousel .carousel .movie{
+    min-width: 20%;
+    transition:.3s ease all;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.seccion .container-carousel .carousel .movie.hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.seccion .container-carousel .carousel .movie img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.object-fit{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*Info Peliculas*/
+
+#view{
+    text-align: justify;
+}
+
+.cabecera #title, .otherInfo{
+    position: relative;
+    z-index: 2;
+}
+.cabecera{
+    position: relative;
+    overflow: hidden;
+    height: 95vh;
+}
+
+.cabecera #imgHead{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 95vh;
+    opacity: 0.4;
+}
