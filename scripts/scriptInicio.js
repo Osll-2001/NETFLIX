@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 async function getDataTopRated(){
     try{
         let response=await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key="+apiKey);
@@ -22,7 +21,6 @@ async function getDataTopRated(){
         console.log(error);
     }
 }
-
 
 
 function createSection(titleSection,movies){
@@ -90,7 +88,7 @@ function createSection(titleSection,movies){
         let imgMovie=document.createElement("img");
         imgMovie.src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+movies[i].poster_path;
         movieLink.appendChild(imgMovie);
-        movieLink.href="http://127.0.0.1:5500/views/movie.html?id="+movies[i].id;
+        movieLink.href="../views/movie.html?id="+movies[i].id;
         movieContainer.appendChild(movieLink);
         hoverMovie(movieContainer);
         
