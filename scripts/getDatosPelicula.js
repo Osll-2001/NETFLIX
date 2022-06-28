@@ -139,7 +139,7 @@ function createinfoPeople(titleCast,people){
         let link=document.createElement("a");
         link.textContent=people[i].name;
         link.classList.add("text-secondary","person");
-        link.setAttribute("href","../views/person.html?id="+people[i].id);
+        link.setAttribute("href","https://osll-2001.github.io/views/person.html?id="+people[i].id);
         td.appendChild(link);
         tr.appendChild(td);  
         tbody.appendChild(tr);

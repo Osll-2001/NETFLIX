@@ -135,7 +135,7 @@ function createSection(titleSection,movies,typeC){
         let imgMovie=document.createElement("img");
         imgMovie.src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"+movies[i].poster_path;
         movieLink.appendChild(imgMovie);
-        movieLink.href="./views/movie.html?id="+movies[i].id;
+        movieLink.href="https://osll-2001.github.io/views/movie.html?id="+movies[i].id;
         movieContainer.appendChild(movieLink);
         hoverMovie(movieContainer);
         
