@@ -14,55 +14,59 @@
   </head>
 <body class="bg-dark">
 
-    <div class="container-fluid cabecera" id="cabecera">
+  <div class="container-fluid cabecera" id="cabecera">
 
-     <img id="imgHead" class="img-fluid">
+    <img id="imgHead" class="img-fluid">
 
-     <div class="row">
-       <nav class="navbar navbar-light bg-transparent justify-content-between w-100">
+    <div class="row">
+      <nav class="navbar navbar-light bg-transparent justify-content-between w-100">
          <a class="navbar-brand" href="../index.html"><img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" id="icono"></a>
-       </nav>
-      </div>
+      </nav>
+    </div>
 
-      <div class="title">
-        <h2 id="title" class="text-white">
-        </h2>
-      </div>
-      <div class="OverView">
-        <p id="view" class="text-white col-xl-6 text-opacity-75"></p>
-      </div>
-      <div class="otherInfo text-white text-opacity-75 d-flex flex-row my-xl-0 fst-italic fs-6">
-        <p id="duracion" class="me-xl-3"></p>
-        <p  id="anio" class="me-xl-3"></p>
-        <p id="puntuacion"></p>
-      </div>
+    <div class="title">
+      <h2 id="title" class="text-white"></h2>
+    </div>
+
+    <div class="OverView">
+      <p id="view" class="text-white col-xl-6 text-opacity-75"></p>
+    </div>
+
+    <div class="otherInfo text-white text-opacity-75 d-flex flex-row my-xl-0 fst-italic fs-6">
+      <p id="duracion" class="me-xl-3"></p>
+      <p  id="anio" class="me-xl-3"></p>
+      <p id="puntuacion"></p>
+    </div>
       
-      <button type="button" id="abrirVideo" data-bs-toggle="modal" data-bs-target="#videoModal" class="btn btn-secondary bg-secondary rounded-circle play-button fs-5"><i class="bi bi-play"></i></button>
+    <button type="button" id="abrirVideo" data-bs-toggle="modal" data-bs-target="#videoModal" class="btn btn-secondary bg-secondary rounded-circle play-button fs-5"><i class="bi bi-play"></i></button>
       
-      <div class="modal" id="videoModal">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark border-dark">
+    <div class="modal" id="videoModal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark border-dark">
 
-              <div class="modal-header py-xl-3">
-                <button id="botonCerrar" class="btn btn-close bg-light" data-bs-dismiss="modal"></button>
-              </div>
-
-              <div class="modal-body  my-0 p-xl-0">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item w-100 fs-5" id="trailer" height="500px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-
-            </div>  
+          <div class="modal-header py-xl-3">
+            <button id="botonCerrar" class="btn btn-close bg-light" data-bs-dismiss="modal"></button>
           </div>
+
+          <div class="modal-body  my-0 p-xl-0">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe 
+                class="embed-responsive-item w-100 fs-5" id="trailer" height="500px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+        </div>  
+
       </div>
+    </div>
       
   </div>
 
   <main id="main" class="mt-xl-5"> 
      
   </main>
+  
   <div class="cast text-white mb-xl-5" id="cast">
     
   </div>
